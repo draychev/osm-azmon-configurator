@@ -21,3 +21,11 @@ $ kubectl get ConfigMap -n osm-system azmon-config -o json | jq '.data'
   "namespaces": "bookstore,bookbuyer,bookthief"
 }
 ```
+
+### How to run it
+
+1. `make build` to build it
+2. `make docker-push` to push to a container registry
+3. `./deploy.sh` to deploy it to a cluster
+4. `./tail-logs.sh` to see what it does
+5. `kubectl get ConfigMap -n osm-system azmon-config -o json | jq '.data'` to see the ConfigMap
